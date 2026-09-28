@@ -41,7 +41,7 @@ export function Gallery({ images, layout = "mosaic" }: { images: (PropertyImage 
                 <Picture src={img.src} alt={img.alt} />
               </div>
             </ImageReveal>
-            {img.caption && <span className="absolute bottom-3 left-3 rounded-full bg-ivory/85 px-3 py-1 text-[12px] backdrop-blur">{img.caption}</span>}
+            {img.caption && <span className="absolute bottom-3 left-3 rounded-full bg-ivory/90 px-3 py-1 text-[12px]">{img.caption}</span>}
           </button>
         ))}
       </div>

@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { adminApi } from "@/lib/api";
 import type { Property, PropertyImage } from "@/lib/types";
 import { Picture } from "../Picture";
-import { SCENES } from "../render/Scene";
+import { SCENES } from "../render/scenes";
 import { Button } from "../ui/Button";
 import { Input, Textarea } from "../ui/Field";
 import { Icon } from "../ui/Icon";

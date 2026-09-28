@@ -95,14 +95,14 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           </div>
         </aside>
 
-        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-graphite/10 bg-ivory/90 px-4 backdrop-blur-xl lg:hidden">
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-graphite/10 bg-ivory px-4 lg:hidden">
           <Link href="/admin" className="font-serif text-[18px] tracking-[0.24em]">АТМОСФЕРА</Link>
           <button onClick={logout} className="flex items-center gap-2 text-[13px] text-taupe"><Icon name="logout" className="h-4 w-4" /> Выйти</button>
         </header>
 
         <main className="px-4 pb-28 pt-6 sm:px-6 lg:ml-64 lg:px-10 lg:pb-12 lg:pt-10">{children}</main>
 
-        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-graphite/10 bg-ivory/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl lg:hidden" aria-label="Разделы">
+        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-graphite/10 bg-ivory pb-[env(safe-area-inset-bottom)] lg:hidden" aria-label="Разделы">
           {ADMIN_NAV.filter((n) => MOBILE_MAIN.includes(n.href)).map((n) => (
             <Link key={n.href} href={n.href} className={clsx("flex flex-col items-center gap-1 py-2.5 text-[10px]", pathname === n.href ? "text-graphite" : "text-taupe")}>
               <Icon name={n.icon} className="h-5 w-5" /> {n.label}

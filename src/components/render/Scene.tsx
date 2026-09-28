@@ -6,10 +6,11 @@ import { forest, hills, rng, sag, stars } from "./geometry";
 
 /**
  * Procedural architectural visualisations used until real photos are uploaded.
- * Referenced from data as `render:<SceneId>`; any other image src replaces them transparently.
+ * Source for scripts/render-scenes.tsx only — the site shows the pre-rendered WebP files,
+ * because live SVG with blur filters is far too heavy to scroll on phones.
  */
-export const SCENES = ["a-dusk", "a-tub", "a-interior", "a-winter", "b-dusk", "b-night", "b-interior", "b-tub"] as const;
-export type SceneId = (typeof SCENES)[number];
+import { SCENES, type SceneId } from "./scenes";
+export { SCENES, type SceneId };
 type Mood = "dusk" | "night" | "winter";
 
 interface Palette {

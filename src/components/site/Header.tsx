@@ -30,7 +30,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       <header
         className={clsx(
           "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-          solid || open ? "border-b border-graphite/10 bg-ivory/85 backdrop-blur-xl" : "border-b border-white/10 bg-transparent",
+          solid || open ? "border-b border-graphite/10 bg-ivory/95 md:bg-ivory/85 md:backdrop-blur-xl" : "border-b border-white/10 bg-transparent",
         )}
       >
         <div className="container-x flex h-16 items-center justify-between md:h-20">
@@ -86,7 +86,7 @@ export function MobileBookingBar() {
   return (
     <AnimatePresence>
       {show && (
-        <motion.div initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="fixed inset-x-0 bottom-0 z-40 border-t border-graphite/10 bg-ivory/90 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl sm:hidden">
+        <motion.div initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="fixed inset-x-0 bottom-0 z-40 border-t border-graphite/10 bg-ivory px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 sm:hidden">
           <ButtonLink href="/booking" size="lg" className="w-full">Забронировать</ButtonLink>
         </motion.div>
       )}

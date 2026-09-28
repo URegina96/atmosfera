@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Scene } from "@/components/render/Scene";
+import { Picture } from "@/components/Picture";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Field";
 import { adminLogin } from "@/lib/auth";
@@ -32,7 +32,7 @@ export default function AdminLogin() {
   return (
     <div className="grid min-h-screen bg-ivory lg:grid-cols-2">
       <div className="relative hidden overflow-hidden lg:block">
-        <Scene id="b-night" className="absolute inset-0 h-full w-full" />
+        <Picture src="render:b-night" alt="Дом №2 ночью" className="absolute inset-0" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
         <p className="absolute bottom-12 left-12 max-w-sm font-serif text-[40px] leading-tight text-ivory">Панель владельца «Атмосферы»</p>
       </div>

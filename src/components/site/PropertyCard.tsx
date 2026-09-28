@@ -29,7 +29,7 @@ export function PropertyCard({ property, index }: { property: Property; index: n
               </motion.div>
             </ImageReveal>
           </motion.div>
-          <span className="absolute left-5 top-5 rounded-full bg-ivory/85 px-3 py-1 font-serif text-[15px] backdrop-blur">{String(index + 1).padStart(2, "0")}</span>
+          <span className="absolute left-5 top-5 rounded-full bg-ivory/90 px-3 py-1 font-serif text-[15px]">{String(index + 1).padStart(2, "0")}</span>
         </div>
         <div className="mt-6 flex items-start justify-between gap-6">
           <div>
