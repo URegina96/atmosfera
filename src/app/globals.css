@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-graphite font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  :focus-visible {
+    outline: 2px solid #7a624c;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: #e3d7c4;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-eyebrow text-taupe;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
+  }
+  .hairline {
+    @apply border-graphite/10;
+  }
+  .card {
+    @apply rounded-2xl border border-graphite/10 bg-white/70;
+  }
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.steam {
+  animation: steam 7s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+.steam-2 { animation-delay: -2.3s; animation-duration: 8.5s; }
+.steam-3 { animation-delay: -4.1s; animation-duration: 6.5s; }
+@keyframes steam {
+  0% { opacity: 0; transform: translateY(10px) scaleY(0.9); }
+  30% { opacity: 0.35; }
+  100% { opacity: 0; transform: translateY(-40px) scaleY(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .steam { animation: none; opacity: 0.25; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
